@@ -1,0 +1,29 @@
+
+<div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900 dark:text-white">
+    <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+      <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class="container my-12 mx-auto px-4 md:px-12  dark:text-white" *ngIf="post">
+        
+        <div class="w-full max-w-6xl text-justify bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            
+            <div class="flex flex-col items-center pb-10">
+                <div *ngFor="let img of imagenes">
+                    <img class="h-auto max-w-lg mx-auto mt-5" 
+                        [src]="img.url" alt="">
+                </div>
+                
+            
+                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{post.title}}</h5>
+                <div class="mb-3  mr-5 ml-5 font-normal text-gray-700 dark:text-gray-400" 
+                        [innerHTML]="post.descripcion "></div>
+                <span class="text-sm text-gray-500 dark:text-gray-400">{{fechaHora(post.createdAt)}}</span>
+                <div class="flex mt-4 space-x-3 md:mt-6">
+                    <a routerLink="/public/blog" 
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Regresar</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

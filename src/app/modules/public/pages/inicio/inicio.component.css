@@ -1,0 +1,57 @@
+
+
+  .list {
+    display: flex;
+    gap: 0.25rem;
+    transform-style: preserve-3d;
+    list-style-type: none;
+  
+    &:hover :not(:hover) {
+      margin: 0 -20px;
+      transform: perspective(500px) rotateY(45deg) scale(0.95);
+    }
+  
+    &:hover :not(:hover)::after {
+      opacity: 0.4;
+    }
+  }
+  
+  .item {
+    position: relative;
+    width: 120px;
+    aspect-ratio: 3/4;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    transition: margin 0.5s, transform 0.5s;
+  
+    &:nth-of-type(1) { background-image: url(https://miro.medium.com/v2/resize:fit:672/0*-_CPKhkRFLutRloz.jpg); }
+    &:nth-of-type(2) { background-image: url(https://miro.medium.com/v2/resize:fit:2000/1*IqZ6V9_TLJO7aaD6K4a7oQ.png); }
+    &:nth-of-type(3) { background-image: url(https://dkrn4sk0rn31v.cloudfront.net/uploads/2021/10/tipagem-no-typescript.png); }
+    &:nth-of-type(4) { background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--fPRjjldV--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sgeisqeyeesmytebce44.png); }
+    &:nth-of-type(5) { background-image: url(https://wp-digest.com/wp-content/uploads/2023/07/php.png); }
+    &:nth-of-type(6) { background-image: url(https://nestjs.com/img/nest-og.png); }
+    &:nth-of-type(7) { background-image: url(https://alifouad91.com/storage/post/9sIBxL0hhyw5VCBwlBbEYtz9tlzgOqdHRaCRVAAK.jpeg); }
+    &:nth-of-type(8) { background-image: url(https://yt3.googleusercontent.com/HRJKaJg70sqBrCNh7Tf2RSjXTb_5hCUn7Hht7mxUJMg77EWkihh55JklD-KhwAMhwY31ox5O=s900-c-k-c0x00ffffff-no-rj); }
+    &:nth-of-type(9) { background-image: url(https://blog.interfell.com/hubfs/MySQL%20un%20gestor%20de%20base%20de%20datos.jpg); }
+    &:nth-of-type(10) { background-image: url(https://www.muylinux.com/wp-content/uploads/2022/10/PostgreSQL.jpg); }
+  
+    &:hover ~ .item {
+      transform: perspective(500px) rotateY(-45deg) scale(0.95);
+    }
+  
+    &:hover {
+      transform: perspective(500px) rotateY(0) scale(1.2);
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      aspect-ratio: inherit;
+      border-radius: inherit;
+      background-color: black;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+  }
